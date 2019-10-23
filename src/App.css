@@ -1,0 +1,323 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+ 
+.tab_container {
+  border: 1px solid #999999;
+  border-top: none;
+  clear: both; 
+  float: left; 
+  width: 100%;
+  background: #FFFFFF;
+}
+
+.tab_content {
+  padding: 16px;
+  font-size: 1.2em;
+  display: none;
+}
+
+#content {
+  width: 100%;
+}
+#tab1{
+width: 100%;
+height: 100%;
+}
+#tab1 #phong{
+float: left;
+margin-left: 16px;
+width: 250px;
+height: 330px;
+border: 1px solid green;
+text-align: center;
+margin-bottom: 16px;
+}
+#tab1 #phong img{
+width: 100%;
+height: 150px;
+}
+#tab1 #phong h2{
+font-weight: bold;
+}
+#tab1 #phong h4{
+color: #3291B7;
+}
+#tab1 #phong input:hover{
+background: green;
+color: white;
+font-weight: bold;
+}
+
+#tab2 #phong h2{
+font-weight: bold;
+color: black;
+}
+#tab2 #phong h4{
+color: #3291B7;
+}
+#tab2 #phong input:hover{
+background: green;
+color: white;
+font-weight: bold;
+}
+
+#trangthaiphong-sansang{
+color: green;
+}
+#trangthaiphong-dangthue{
+color: red;
+}
+#loc-phong{
+text-align: right;
+padding: 8px;
+}
+#loc-phong button:hover{
+background: white;
+color:#3291B7;
+border: 1px solid #3291B7;
+cursor: pointer;
+font-weight: bold;
+}
+#tab2{
+color: gray;
+}
+#timthongtinphong #tim-phong-dat-truoc{
+text-align: right;
+}
+#tim-phong-dat-truoc button{
+margin: 10px;
+width: 110px;
+text-align: right;
+color: white;
+}
+#tim-phong-dat-truoc button:hover{
+background: white;
+color:#3291B7;
+border: 1px solid #3291B7;
+cursor: pointer;
+font-weight: bold;
+}
+#tab2 label{
+color: #3291B7;
+}
+#tab2{
+width: 100%;
+height: 100%;
+}
+#tab2 #phong{
+margin-top: 8px;
+margin-bottom: 16px;
+float: left;
+margin-left: 16px;
+width: 250px;
+height: 330px;
+border: 1px solid green;
+text-align: center;
+}
+#tab2 #phong img{
+width: 100%;
+height: 150px;
+}
+/*Them khach hang*/
+#khung-them-khach-hang{
+margin-left: 16px;
+padding: 10px;
+margin-top: 0px;
+width: 100%;
+height: 100%;
+border: 1px solid transition;
+}
+#khung-them-khach-hang button:hover{
+background: transparent;
+color: gray;
+font-weight: bold;
+}
+#tab3 #khung-them-khach-hang li{
+list-style-type: none;
+}
+/*Model them khach hang bang tay*/
+.container {
+width: 70%;
+margin: auto;
+text-align: center;
+}
+/* Định dạng phần form đăng nhập*/
+.fomrgroup {
+width: 50%;
+margin: auto;
+display: block;
+height: 50px;
+}
+.fomrgroup input{
+float: right;
+width: 70%;
+height: 25px;
+margin-right: 20px;
+line-height: 50px;
+}
+.fomrgroup b{
+font-size: 20px;
+}
+/* The Modal (background) */
+.modal {
+display: none; /* mặc định được ẩn đi */
+position: fixed; /* vị trí cố định */
+z-index: 1; /* Ưu tiên hiển thị trên cùng */
+padding-top: 100px; 
+left: 0;
+top: 0;
+width: 100%;
+height: 100%; 
+overflow: auto;
+background-color: rgb(0,0,0); 
+background-color: rgba(0,0,0,0.4); 
+}
+
+/* Modal Content */
+.modal-content {
+background-color: #fefefe;
+margin: auto;
+padding: 20px;
+border: 1px solid #888;
+width: 60%;
+}
+
+/* The Close Button */
+.close {
+color: #aaaaaa;
+float: right;
+font-size: 28px;
+font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+color: #000;
+text-decoration: none;
+cursor: pointer;
+}
+/*Model them bang tay*/
+.modal-body {
+width: 100%;
+margin: auto;
+border-radius: 5px;
+background-color: #f2f2f2;
+padding: 20px;
+text-align: left;
+}
+.modal-body label{
+margin-left: 5px;
+color: #3291B7;
+font-weight: bold;
+}
+input[type=text],input[type=date],select {
+width: 100%;
+padding: 12px;
+border: 1px solid #ccc;
+border-radius: 4px;
+box-sizing: border-box;
+margin-top: 6px;
+margin-bottom: 16px;
+resize: vertical;
+}
+
+
+input[type=submit] {
+background-color: #4CAF50;
+color: white;
+padding: 12px 20px;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+text-align: center;
+}
+input[type=submit]:hover {
+background-color: #45a049;
+}
+input[type=button] {
+background-color: #4CAF50;
+color: white;
+padding: 12px 20px;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+text-align: center;
+}
+
+input[type=button]:hover {
+background-color: #45a049;
+}
+/*ket qua trich xuat bang AI*/
+#ket-qua-trich-xuat{
+width: 100%;
+height: 450px;
+border: 1px solid gray;
+margin-top: 16px;
+}
+#modalThemBangAI input[type=button]:hover {
+background-color: #45a049;
+}
+#ket-qua-trich-xuat #anh-cmnd img{
+width: 100%;
+height: 100%;
+}
+#ket-qua-trich-xuat #avatar{
+width: 100px;
+height: 120px;
+border: 1px solid #3291B7;
+float: left;
+margin: 5px;
+}
+#ket-qua-trich-xuat #avatar img{
+width: 100%;
+height: 100%;
+}
+#ket-qua-trich-xuat #thong-tin-khach{
+width: 100%;
+height: 100%;
+margin-top: 10px;
+}
+#ket-qua-trich-xuat #thong-tin-khach{
+width: 100%;
+height: 100%;
+}
+
+/*Modal tem bang AI*/
+#myModalThemBangAI-Content {
+width: 100%;
+height: 100%;
+border: 1px solid green;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
