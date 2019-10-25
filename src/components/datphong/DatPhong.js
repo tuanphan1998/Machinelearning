@@ -1,8 +1,22 @@
 import React, { Component } from 'react'
 import Phong from './Phong'
-import ModalDatPhong from './ModalDatPhong';
 import {Firebaseone} from '../../Firebaseconntion';
-export default class DatPhong extends Component {
+import {connect} from 'react-redux'
+import {Alert, AlertContainer} from 'react-bs-notifier'
+const mapStateToProps = state=>{
+  return {
+    datPhongReducer : state.datPhongReducer,
+  }
+}
+
+const mapDispatchToProps = dispatch=>{
+  return {
+    Thaydoutrangthau: () => {
+      dispatch({type:'CHANGER_INFO'})
+    }
+  }
+}
+export default connect(mapStateToProps,mapDispatchToProps)(class DatPhong extends Component {
 
   constructor(props){
     super(props);
@@ -13,13 +27,17 @@ export default class DatPhong extends Component {
       cmnd : '',
       ngayden : '',
       ngaydi : '',
+      datPhongThanhCong:'',
       data : []
     };
   }
 
-
-
-
+  componentWillReceiveProps(nextProps) {
+    if(nextProps && nextProps.datPhongReducer.message){
+      this.setState({datPhongThanhCong : nextProps.datPhongReducer.message})
+    }
+  }
+  
   componentWillMount() {
     Firebaseone.on('value',(datas) => {
       var Mang = [];
@@ -29,12 +47,20 @@ export default class DatPhong extends Component {
         const maphong = element.val().maphong;
         const image = element.val().image;
         const gia = element.val().gia;
+        const tenkhach = element.val().tenkhach;
+        const diachi = element.val().diachi;
+        const sdt = element.val().sdt;
+        const cmnd = element.val().cmnd;
         Mang.push({
           trangthai : trangthai,
           maphong : maphong,
           image : image,
           gia : gia,
-          ids : ids
+          ids : ids,
+          tenkhach : tenkhach,
+          diachi : diachi,
+          sdt : sdt,
+          cmnd : cmnd,
         })
       });
       this.setState({
@@ -60,26 +86,49 @@ export default class DatPhong extends Component {
       return this.state.data.map((value , key) => {
         if(value.trangthai === 1)
         {
-          return <option value={value.maphong}>{value.maphong}*{value.ids}</option>
+          return <option key={key} value={value.maphong}>{value.maphong}*{value.ids}</option>
         }
       } )
     }
   }
 
+
   Buttonkiemtra = () => {
     console.log(this.state);
   }
 
+  showRoom = rooms=>{
+    var result = [];
+    result = rooms.map((room,key)=>{
+      if(room.trangthai === 2){
+        return <Phong key={key} image={room.image}
+        maphong = {room.maphong}
+        gia = {room.gia}
+        uniqueKey={room.ids}
+        tenkhach={room.tenkhach}
+        diachi={room.diachi}
+        sdt={room.sdt}
+        cmnd={room.cmnd}
+        />
+      }
+    });
+    return result;
+  }
 
     render() {
-        var ketqua = [];
-        this.state.data.forEach((element) => {
-          if(element.maphong.indexOf(this.state.selectrom) !== -1)
-          {
-            ketqua.push(element);
-          }
-        });
-        console.log(ketqua);
+        // var ketqua = [];
+        // this.state.data.forEach((element) => {
+        //   if(element.maphong.indexOf(this.state.selectrom) !== -1)
+        //   {
+        //     ketqua.push(element);
+        //   }
+        // });
+        // console.log(ketqua);
+        const time = ()=>{
+          setTimeout(() => {
+            alert(this.state.datPhongThanhCong);
+          }, 500);
+        }
         return (
             <>
                 <div className="page-wrapper">
@@ -114,6 +163,7 @@ export default class DatPhong extends Component {
     <div className="tab_container"> 
       <div id="tab1" className="tab_content"> 
         <div id="loc-phong-dat-phong">
+          <p style={{color:'rgb(78, 199, 111)'}}>{this.state.datPhongThanhCong != '' ? time : ''}</p>
           <label>Tên phòng:</label>
           <select name="selectrom" onChange={(event)=>this.IsChange(event)}>
             <option value={'A'}>Mời bạn chọn</option>
@@ -143,10 +193,10 @@ export default class DatPhong extends Component {
             <button className="btn btn-info">Sẵn Sàng</button>
           </div>
         </div>
-        <Phong ketquas={ketqua}/>
+        {this.showRoom(this.state.data)}
       </div>{/* #tab1 */}
       {/* Modal */}
-      <ModalDatPhong />
+      {/* <ModalDatPhong /> */}
       <footer className="footer">
         © 2019 Copyright by TAM_TUAN_HUNG_VANG
       </footer>
@@ -163,4 +213,4 @@ export default class DatPhong extends Component {
             </>
         )
     }
-}
+})
