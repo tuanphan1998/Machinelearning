@@ -5,6 +5,7 @@ import reducer4 from './reducers/reducer4';
 import reducer5 from './reducers/reducer5';
 import reducer6 from './reducers/reducer6';
 import reducer7 from './reducers/reducer7';
+import datPhongReducer from './reducers/datPhongReducer'
 var redux = require('redux');
 
 var allreducer = redux.combineReducers({
@@ -15,6 +16,7 @@ var allreducer = redux.combineReducers({
     Themdulieudichvu2 : reducer5,
     Themdulieudichvu3 : reducer6,
     thaydoitrangthaikhach : reducer7,
+    datPhongReducer : datPhongReducer,
 })
 
 var store = redux.createStore(allreducer);
