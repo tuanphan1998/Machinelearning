@@ -14,3 +14,4 @@ import * as firebase from 'firebase';
 
 // Khach hang
 export const Firebaseone = firebase.database().ref('KhachHang');
+export const base = firebase;
