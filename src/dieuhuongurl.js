@@ -7,7 +7,6 @@ import Sidebar from './components/home/Sidebar';
 import DatPhong from './components/datphong/DatPhong';
 import LapPhieuDV from './components/lapphieudv/LapPhieuDV';
 import QuanLyNV from './components/quanlynv/QuanLyNV';
-import LapHoaDon from './components/laphoadon/LapHoaDon';
 
 
 class dieuhuongurl extends Component {
@@ -21,8 +20,7 @@ class dieuhuongurl extends Component {
       <Route exact path="/" component={ThongKe} />
       <Route path="/thue-phong" component={ThuePhong} />
       <Route path="/dat-phong" component={DatPhong} />
-      <Route path="/lap-phieu-dv" component={LapPhieuDV} />
-      <Route path="/lap-hoa-don" component={LapHoaDon} />
+      <Route path="/lap-hoa-don" component={LapPhieuDV} />
       <Route path="/quanly-nhanvien" component={QuanLyNV} />
     {/* </div> */}
   </Router>
