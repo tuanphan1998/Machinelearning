@@ -20,11 +20,12 @@ class SearchRoom extends Component {
     }
     
     showoption = () => {
-        return this.props.dulieu.map((value , key) => {
+        return this.props.dulieu.map((value) => {
             if(value.trangthai === 0)
             {
                 return <option>{value.maphong}</option>
             }
+            return 0;
         })
     }
 

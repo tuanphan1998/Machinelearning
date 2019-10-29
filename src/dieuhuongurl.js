@@ -5,9 +5,8 @@ import ThuePhong from "./components/ThuePhong/ThuePhong";
 import Header from './components/home/Header';
 import Sidebar from './components/home/Sidebar';
 import DatPhong from './components/datphong/DatPhong';
-import LapPhieuDV from './components/lapphieudv/LapPhieuDV';
 import QuanLyNV from './components/quanlynv/QuanLyNV';
-import LapHoaDon from './components/laphoadon/LapHoaDon';
+import LapPhieuDV from './components/lapphieudv/LapPhieuDV';
 import { base } from './Firebaseconntion';
 import Login from './components/auth/Login'
 import Logout from './components/auth/Logout'
@@ -43,8 +42,7 @@ class dieuhuongurl extends Component {
       <Route exact path="/" component={ThongKe} />
       <Route path="/thue-phong" component={ThuePhong} />
       <Route path="/dat-phong" component={DatPhong} />
-      <Route path="/lap-phieu-dv" component={LapPhieuDV} />
-      <Route path="/lap-hoa-don" component={LapHoaDon} />
+      <Route path="/lap-hoa-don" component={LapPhieuDV} />
       <Route path="/quanly-nhanvien" component={QuanLyNV} />
       <Route path="/sign-in" component={(props)=> <Login authenticated = {this.state.authentiactied} {...props}/>} />
       <Route path="/sign-out" component={Logout} />
