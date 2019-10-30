@@ -1,16 +1,17 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Logo from './Logo';
 import AlertInfo from '../Thongbao/AlertInfo';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom'
+
 class Header extends Component {
 
     showdata = () => {
-        if(this.props.trangthaithongbao === true)
-        {
-            return  <AlertInfo/>;
+        if (this.props.trangthaithongbao === true) {
+            return <AlertInfo />;
         }
     }
- 
+
     render() {
         return (
             <>
@@ -19,7 +20,7 @@ class Header extends Component {
                 {/* ============================================================== */}
                 <header className="topbar">
 
-                {this.showdata()}
+                    {this.showdata()}
                     <nav className="navbar top-navbar navbar-expand-md navbar-light">
                         {/* ============================================================== */}
                         {/* Logo */}
@@ -50,9 +51,26 @@ class Header extends Component {
                                 {/* Profile */}
                                 {/* ============================================================== */}
                                 {/* Button trigger modal */}
-                                <li className="nav-item dropdown u-pro">
-                                    <a className="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="javascript:avoid(0)" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../assets/images/users/1.jpg" alt="user"  /> <span className="hidden-md-down">THTV &nbsp;<br /></span> </a>
-                                </li>
+                                {this.props.authenticated ? (
+                                    <>
+                                        <li className="nav-item dropdown u-pro">
+                                            <a className="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="javascript:avoid(0)" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../assets/images/users/1.jpg" alt="user" /> <span className="hidden-md-down">THTV &nbsp;<br /></span> </a>
+                                        </li>
+                                        <li className="nav-item dropdown u-pro">
+                                            <Link to='/sign-out' className="nav-link fa fa-sign-out"></Link>
+                                        </li>
+                                    </>
+                                ) : (
+                                        <>
+                                            <li className="nav-item dropdown u-pro">
+                                                <Link to='/sign-up' className="nav-link">Sign Up </Link>
+                                            </li>
+
+                                            <li className="nav-item dropdown u-pro">
+                                                <Link to='/sign-in' className="nav-link">Sign In </Link>
+                                            </li>
+                                        </>
+                                    )}
                             </ul>
                         </div>
                     </nav>
