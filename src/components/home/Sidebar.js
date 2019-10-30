@@ -23,10 +23,8 @@ class Sidebar extends Component {
                                 </li>
                                 <li> <a className="waves-effect waves-dark" href="/dat-phong" aria-expanded="false"><i className="fa fa-id-card" /><span className="hide-menu">Đặt phòng</span></a>
                                 </li>
-
                                 <li> <a className="waves-effect waves-dark" href="/lap-hoa-don" aria-expanded="false"><i className="fa fa-file" /><span className="hide-menu">Lập phiếu dịch vụ</span></a>
                                 </li>
-
                                 <li> <a className="waves-effect waves-dark" href="/quanly-nhanvien" aria-expanded="false"><i className="fa fa-users" /><span className="hide-menu">Quản lý nhân viên</span></a>
                                 </li>
                             </ul>

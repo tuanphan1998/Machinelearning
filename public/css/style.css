@@ -6272,7 +6272,7 @@ h4[id=trangthaiphong-dangduocthue]{
 
 #tab1 #form-lap-phieu{
   width: 80%;
-  height: 80%;
+
   border: 1px solid gray;
   text-align: left;
   font-size: 16px;
@@ -6318,6 +6318,5 @@ padding-left: 16px;
 #tab1 #form-lap-phieu #danh-sach-dich-vu table td{
 padding-left: 16px;
 }
-.tab_container{height: 1000px}
 #usr{width: 220px; float: left}
 .display{display: inline-block; height: 30px;}

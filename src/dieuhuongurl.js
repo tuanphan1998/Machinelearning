@@ -6,11 +6,12 @@ import Header from './components/home/Header';
 import Sidebar from './components/home/Sidebar';
 import DatPhong from './components/datphong/DatPhong';
 import QuanLyNV from './components/quanlynv/QuanLyNV';
+
 import LapPhieuDV from './components/lapphieudv/LapPhieuDV';
 import { base } from './Firebaseconntion';
-import Login from './components/auth/Login'
-import Logout from './components/auth/Logout'
-import Register from './components/auth/Register'
+import Login from './components/auth/Login';
+import Logout from './components/auth/Logout';
+import Register from './components/auth/Register';
 
 class dieuhuongurl extends Component {
   constructor(props) {
