@@ -37,8 +37,8 @@ export default connect(null,mapDispatchToProps)(class ModalDatPhong extends Comp
     const {uniqueKey,maphong,tenkhach,diachi,sdt,cmnd} = this.props;
     return (
       <>
-        <div className="modal fade" id={uniqueKey} role="dialog">
-          <div className="modal-lg" style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>
+        <div className="modal fade" id={uniqueKey}  role="dialog"  aria-hidden="true">
+          <div className="modal-lg modal-dialog"  style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>
             {/* Modal content*/}
             <div className="modal-content">
               <div className="modal-header">

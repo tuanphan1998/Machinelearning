@@ -3,7 +3,7 @@ import ModalDatPhong from './ModalDatPhong';
 
 class Phong extends Component {
     render() {
-        const {image,maphong,gia,uniqueKey,tenkhach,diachi,sdt,cmnd} = this.props; 
+        const { image, maphong, gia, uniqueKey, tenkhach, diachi, sdt, cmnd } = this.props;
         return (
             <div>
                 <div id="phong">
@@ -18,11 +18,11 @@ class Phong extends Component {
                         data-target={"#" + uniqueKey}>Detail</button>
                 </div>
                 <ModalDatPhong uniqueKey={uniqueKey}
-                tenkhach = {tenkhach}
-                diachi = {diachi}
-                sdt = {sdt}
-                cmnd = {cmnd}
-                maphong = {maphong}
+                    tenkhach={tenkhach}
+                    diachi={diachi}
+                    sdt={sdt}
+                    cmnd={cmnd}
+                    maphong={maphong}
                 />
             </div>
         );
