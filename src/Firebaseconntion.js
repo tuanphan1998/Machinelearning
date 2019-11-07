@@ -11,7 +11,8 @@ import * as firebase from 'firebase';
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-
+  
 // Khach hang
 export const Firebaseone = firebase.database().ref('KhachHang');
+export const userFirebase = firebase.database().ref('users');
 export const base = firebase;

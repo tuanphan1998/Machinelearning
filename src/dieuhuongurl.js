@@ -6,9 +6,10 @@ import Header from './components/home/Header';
 import Sidebar from './components/home/Sidebar';
 import DatPhong from './components/datphong/DatPhong';
 import QuanLyNV from './components/quanlynv/QuanLyNV';
+import QuanLyUser from './components/quanlyuser/QuanLyUser';
 
 import LapPhieuDV from './components/lapphieudv/LapPhieuDV';
-import { base } from './Firebaseconntion';
+import { base, userFirebase } from './Firebaseconntion';
 import Login from './components/auth/Login';
 import Logout from './components/auth/Logout';
 import Register from './components/auth/Register';
@@ -25,7 +26,7 @@ class dieuhuongurl extends Component {
     base.auth().onAuthStateChanged(user=>{
       if(user){
         this.setState({authentiactied:true})
-        console.log(user.uid)
+        console.log(user)
       }
       else{
         this.setState({authentiactied:false})
@@ -34,7 +35,7 @@ class dieuhuongurl extends Component {
   }
   
  render() {
-   
+   console.log(base.auth().currentUser);
    return (
      <Router>
     {/* <div> */}
@@ -45,6 +46,7 @@ class dieuhuongurl extends Component {
       <Route path="/dat-phong" component={DatPhong} />
       <Route path="/lap-hoa-don" component={LapPhieuDV} />
       <Route path="/quanly-nhanvien" component={QuanLyNV} />
+      <Route path="/users" component={QuanLyUser} />
       <Route path="/sign-in" component={(props)=> <Login authenticated = {this.state.authentiactied} {...props}/>} />
       <Route path="/sign-out" component={Logout} />
       <Route path="/sign-up" component={(props)=> <Register authenticated = {this.state.authentiactied} {...props} />} />

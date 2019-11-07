@@ -7,6 +7,7 @@ import reducer6 from './reducers/reducer6';
 import reducer7 from './reducers/reducer7';
 import datPhongReducer from './reducers/datPhongReducer'
 import reducerToanBoPhanTu from './reducers/Toanbophantu';
+import userReducer from './reducers/userReducer';
 var redux = require('redux');
 
 var allreducer = redux.combineReducers({
@@ -19,6 +20,7 @@ var allreducer = redux.combineReducers({
     thaydoitrangthaikhach : reducer7,
     datPhongReducer : datPhongReducer,
     ToanBoPhanTu : reducerToanBoPhanTu,
+    userReducer : userReducer,
 })
 
 var store = redux.createStore(allreducer);
